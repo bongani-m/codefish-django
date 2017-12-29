@@ -1,5 +1,3 @@
-[ ![Codeship Status for bongani-m/codefish-django](https://app.codeship.com/projects/07efe1e0-cd29-0135-f503-7296c56c2a46/status?branch=master)](https://app.codeship.com/projects/261984)
-
 ![Travis CI Status for bongani-m/codefish-django](https://travis-ci.org/bongani-m/codefish-django.svg?branch=master)
 
 [![Coverage Status](https://coveralls.io/repos/github/bongani-m/codefish-django/badge.svg?branch=master)](https://coveralls.io/github/bongani-m/codefish-django?branch=master)
