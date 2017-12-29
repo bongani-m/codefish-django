@@ -1,11 +1,18 @@
 language: python
-python: 
-   - "3.6.3"
+python:
+- 3.6.3
 install:
-   - pip install -r requirements.txt
-   - pip install coveralls
+- pip install -r requirements.txt
+- pip install coveralls
 script:
-   - python manage.py test 
-   - coverage run --source=codefish manage.py test 
+- python manage.py test
+- coverage run --source=codefish manage.py test
 after_success:
-   - coveralls
+- coveralls
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ci7A+cWoOUsvfwXS2V+K9eOeBHIdTjuPFSSpo5QDaJIO5ApmMVtGgBNPerO6igZaIQ2GOEdmjmRCUfpmom2pF6leZ+6EBAAF2MuLh5CpesKgf4EVcn849DwfZPrrki+BDvHAel/dn03pzHR607bQpI/a/qG8arftt9XHCd1rGid8Wtv5JfFRt2fUrTm7ckQeMiD06HIkVmEpVidRyPLyMAVtofL3y8T9MEY1weWXnzAg/vj6s7j0tryMA7IFf2KNygLYwakX+xW+cmp27hGEi18HafjrQ0TPf6cIbkeZ97BWmhg83plGLWi6n3CX7hZmYLv4GodALqQDPgHS2Oi9xE8pmONo6la+kwcqwhacwoR39ugQPVBseVRonUh9bibCYcWdTsbhsmBpUUvpSf2gSN6RSL7RcZfVF84B8Ogw0uzjuaNQbjqetBlrFw3A5UVT+sd6xCv5e7Iwmq+lh7K+augVqaGPdsj9hb9w5+8wUFUtU60oayxilYaxUOhbhc58k1xZhMgosyFpNr9Y2OdK6899m7Te1yup/om/4v5/nd2iguueqEDJsXlEu2Az5O+TV7ExaX/tazJtH9DDxyMbrfjJlFrBJs8qdKwQmgnkDnQ/ZHzJLn6uMoVZ1dyZMVzgv9lBAjyCRCVyNwTHk+aKKaHnA0m8Fs08QziS5SV7tJY=
+  app: bonganicodefish
+  on:
+    repo: bongani-m/codefish-django
