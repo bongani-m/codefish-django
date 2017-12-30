@@ -1,17 +1,18 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
 <h1>Login</h1>
-{% if form.subject.errors %}
+{% if errors is not None %}
     <ol>
-        {% for error in form.subject.errors %}
-            <li>{{ error|escape }}</li>
+        {% for error in errors%}
+            <li class="error">{{ error }}</li>
         {% endfor %}
     </ol>
 {% endif %}
 
 <form action="/login/" method="POST">
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
     <input type="submit" value="Submit"/>
 </form>

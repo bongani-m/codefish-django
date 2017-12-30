@@ -25,8 +25,8 @@ def login(request):
                 auth_login(request, user)
                 return redirect('protected')
             else:
-                form  = LoginForm()
-                return render(request, 'login.html', {'form': form})
+                print(form.errors)
+                return render(request, 'login.html', {'form': form, 'errors': ['Username and Password combo does not match']})
     else:
         form = LoginForm()
         return render(request, 'login.html', {'form': form})
