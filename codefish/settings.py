@@ -127,3 +127,11 @@ LOGIN_URL = 'login'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'postmaster@sandbox3d868f924bcf45ffbc42af0a1696202f.mailgun.org'
+EMAIL_HOST_PASSWORD = 'cdd878923a7a3f25b5f99d47aed07d04'
+EMAIL_USE_TLS = True
+
+# send_mail('subject', 'body', 'postmaster@sandbox3d868f924bcf45ffbc42af0a1696202f.mailgun.org',['1techjunky@gmail.com'])

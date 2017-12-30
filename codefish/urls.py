@@ -15,12 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
+from django.conf.urls import url
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin', admin.site.urls, name='admin'),
     path('', views.index, name='home'),
-    re_path('logout', views.logout, name='logout'),
+    url(r'^password_reset/$', auth_views.password_reset, name='password_reset'),
+    url(r'^password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+    url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        auth_views.password_reset_confirm, name='password_reset_confirm'),
+    url(r'^reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
+    path('logout/', views.logout, name='logout'),
     re_path(r'login/$', views.login, name='login'),
-    path('protected', views.protected, name='protected')
+    re_path(r'register/$', views.register, name='register'),
+    path('protected', views.protected, name='protected'),
+    path('password_change', views.password_change, name='password_change'),
+    path('sigin', views.login, name='signin')
 ]
