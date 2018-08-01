@@ -56,6 +56,13 @@ def logout(request):
     form  = LoginForm()
     return redirect('home')
 
+
+def test(request):
+    print("yo" )
+    
+    return ('home')
+
+
 def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
